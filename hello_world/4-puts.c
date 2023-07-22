@@ -1,12 +1,17 @@
 #include <stdio.h>
 #include <string.h>
 
-int main () {
-   char str1[51];
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+ */
+int main(void)
+{
+	char str1[51];
 
-   strcpy(str1, "Programming is like building a multilingual puzzle");
+	strcpy(str1, "Programming is like building a multilingual puzzle");
+	puts(str1);
 
-   puts(str1);
-   
-   return(0);
+	return (0);
 }
