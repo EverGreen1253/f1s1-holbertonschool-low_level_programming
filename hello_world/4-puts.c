@@ -8,10 +8,8 @@
  */
 int main(void)
 {
-	char str1[51];
-
-	strcpy(str1, "Programming is like building a multilingual puzzle");
-	puts(str1);
+	puts("Programming is like building a multilingual puzzle");
+	fputs("[stderr]: Something went wrong!", stderr);
 
 	return (0);
 }
