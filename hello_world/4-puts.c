@@ -9,7 +9,7 @@
 int main(void)
 {
 	puts("Programming is like building a multilingual puzzle");
-	fputs("[stderr]: Something went wrong!", stderr);
+	fputs("[Anything]", stderr);
 
 	return (0);
 }
