@@ -1,5 +1,5 @@
 #include <stdio.h>
-  
+
 /**
  * main - Entry point
  *
@@ -7,28 +7,28 @@
  */
 int main(void)
 {
-        char final_char;
-        char ch;
+	char final_char;
+	char ch;
 
-        final_char = 'z' + 1;
-        ch = 'a';
+	final_char = 'z' + 1;
+	ch = 'a';
 
-        while (ch != final_char)
-        {
-                putchar(ch);
-                ch = ch + 1;
-        }
+	while (ch != final_char)
+	{
+		putchar(ch);
+		ch = ch + 1;
+	}
 
 	final_char = 'Z' + 1;
 	ch = 'A';
 
-        while (ch != final_char)
-        {
-                putchar(ch);
-                ch = ch + 1;
+	while (ch != final_char)
+	{
+		putchar(ch);
+		ch = ch + 1;
 	}
 
-        putchar('\n');
+	putchar('\n');
 
-        return (0);
+	return (0);
 }
