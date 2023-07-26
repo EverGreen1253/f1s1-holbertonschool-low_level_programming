@@ -14,30 +14,26 @@ void jack_bauer(void)
 	int hours_s = 0;
 
 	int min_reset = 0;
-	int min_f = 0;
-	int min_s = 0;
+	int minutes = 0;
 
 	while (hours_max != 1)
 	{
+		min_reset = 0;
 		while (min_reset != 1)
 		{
 			_putchar(hours_f + 48);
 			_putchar(hours_s + 48);
 			_putchar(':');
-			_putchar(min_f + 48);
-			_putchar(min_s + 48);
+			_putchar(((minutes - (minutes % 10)) / 10) + 48);
+			_putchar((minutes % 10) + 48);
 			_putchar('\n');
 
-			min_s = (min_s + 1) % 10;
+			minutes = minutes + 1;
 
-			if (min_s == 0)
-			{
-				min_f = min_f + 1;
-			}
-
-			if (min_f == 6 && min_s == 0)
+			if (minutes == 60)
 			{
 				min_reset = 1;
+				minutes = 0;
 			}
 		}
 
@@ -52,9 +48,5 @@ void jack_bauer(void)
 		{
 			hours_max = 1;
 		}
-
-		min_reset = 0;
-		min_f = 0;
-		min_s = 0;
 	}
 }
