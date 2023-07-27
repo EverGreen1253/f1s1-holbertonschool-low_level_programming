@@ -23,8 +23,11 @@ void times_table(void)
 
 			if (result < 10)
 			{
-				_putchar(' ');
-				_putchar(' ');
+				if (result == 0)
+				{
+					_putchar(' ');
+					_putchar(' ');
+				}
 				_putchar(digit_s + 48);
 			}
 			else
