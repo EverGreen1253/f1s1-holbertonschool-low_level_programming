@@ -2,11 +2,13 @@
 #include <stdio.h>
 
 /**
- * main - check the code
+ * add - check the code
+ * @first: first param
+ * @second: second param
  *
  * Return: addition result of passed in params.
  */
 int add(int first, int second)
 {
-	return (first + second); 
+	return (first + second);
 }
