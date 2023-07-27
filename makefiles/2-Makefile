@@ -3,12 +3,7 @@ SRC = main.c school.c
 OBJ = $(wildcard *.o)
 NAME = school
 
-all: 
-	$(CC) $(OBJ) -o $(NAME)
+all: $(OBJ)
 
-%.o : %.c
-	$(CC) -c -o $@
-
-%.c:
-	touch $@
-
+$(OBJ): %.o: %.c
+	$(CC) -c $(CFLAGS) $< -o $@
