@@ -22,10 +22,14 @@ void print_diagonal(int n)
 				horz = horz + 1;
 			}
 			_putchar('\\');
-			_putchar('\n');
 
 			vert = vert + 1;
 			horz = 0;
+
+			if (vert != n)
+			{
+				_putchar('\n');
+			}
 		}
 	}
 	_putchar('\n');
