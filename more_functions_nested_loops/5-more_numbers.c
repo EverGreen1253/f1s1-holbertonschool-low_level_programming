@@ -14,11 +14,12 @@ void more_numbers(void)
 	{
 		while (col < 15)
 		{
-			if (col >= 10) {
+			if (col >= 10)
+			{
 				_putchar(((col - (col % 10)) / 10) + 48);
 			}
 			_putchar((col % 10) + 48);
-			col = (col + 1); 
+			col = (col + 1);
 		}
 
 		col = 0;
