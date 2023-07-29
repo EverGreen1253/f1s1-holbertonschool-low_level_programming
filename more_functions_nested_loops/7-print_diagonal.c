@@ -28,4 +28,5 @@ void print_diagonal(int n)
 			horz = 0;
 		}
 	}
+	_putchar('\n');
 }
