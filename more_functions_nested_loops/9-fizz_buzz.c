@@ -10,7 +10,8 @@ int main(void)
 	int num = 1;
 	int max = 100;
 
-	while (num <= max) {
+	while (num <= max)
+	{
 
 		if ((num % 15) == 0)
 		{
