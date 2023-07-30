@@ -13,7 +13,7 @@ int _atoi(char *s)
 	int evalnum = 0;
 	int evaldone = 0;
 	int digit;
-	int finalnum = 0;
+	unsigned int finalnum = 0;
 
 	while (s[count] != '\0')
 	{
