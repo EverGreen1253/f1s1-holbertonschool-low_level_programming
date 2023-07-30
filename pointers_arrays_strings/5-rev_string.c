@@ -17,14 +17,15 @@ void rev_string(char *s)
 		count = count + 1;
 	}
 
-	length = count - 1;
+	count = count - 1;
+	length = count;
 
-	while (count > ((length / 2) - 1))
+	while (count > (length / 2))
 	{
-		count = count - 1;
 		temp = s[count];
 		s[count] = s[length - count];
 		s[length - count] = temp;
 
+		count = count - 1;
 	}
 }
