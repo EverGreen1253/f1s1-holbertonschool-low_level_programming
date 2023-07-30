@@ -19,13 +19,13 @@ void puts_half(char *str)
 
 	if (count % 2 == 1)
 	{
-		len = (count - 2) / 2;
+		len = (count - 1) / 2;
 	}
 	else
 	{
-		len = (count - 1) / 2;
+		len = count / 2;
 	}
-	startpos = (count - 1) - len;
+	startpos = (count - 1) - len + 1;
 	count = startpos;
 
 	while (str[count] != '\0')
@@ -34,4 +34,5 @@ void puts_half(char *str)
 
 		count = count + 1;
 	}
+	_putchar('\n');
 }
