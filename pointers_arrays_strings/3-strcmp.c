@@ -17,7 +17,7 @@ int _strcmp(char *s1, char *s2)
 		cmp = s1[count] - s2[count];
 		if (cmp != 0)
 		{
-			return cmp;
+			return (cmp);
 		}
 
 		count = count + 1;
@@ -30,7 +30,7 @@ int _strcmp(char *s1, char *s2)
 
 	if (s2[count] != '\0')
 	{
-		return(s2[count]);
+		return (s2[count]);
 	}
 
 	return (0);
