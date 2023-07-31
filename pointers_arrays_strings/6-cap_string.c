@@ -20,7 +20,7 @@ char *cap_string(char *c)
 		if (count > 0)
 		{
 			prevchar = c[count - 1];
-			if (prevchar < 48 || (prevchar > 57 && prevchar < 65) || (prevchar > 90 && prevchar < 97) || prevchar > 122)
+			if (prevchar < 45 || (prevchar > 57 && prevchar < 65) || (prevchar > 90 && prevchar < 97) || prevchar > 122)
 			{
 				capnext = 1;
 			
