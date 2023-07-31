@@ -1,10 +1,11 @@
 #include "main.h"
+#include <stdbool.h>
 
 /**
  * *cap_string - check the code
  * @c: pointer to string first elem
  *
- *Pattern recognition time! Capitalise at start of string ot when the prev char is not a letter
+ *Pattern recognition time!
  *
  * Return: pointer to the string.
  */
@@ -14,16 +15,21 @@ char *cap_string(char *c)
 	int count = 0;
 	int letter;
 	int prevchar;
+	bool cond;
 
 	while (c[count] != '\0')
 	{
 		if (count > 0)
 		{
 			prevchar = c[count - 1];
-			if (prevchar < 45 || (prevchar > 45 && prevchar < 48) || (prevchar > 57 && prevchar < 65) || (prevchar > 90 && prevchar < 97) || prevchar > 122)
+			cond = (prevchar < 45);
+			cond = cond || (prevchar > 45 && prevchar < 48);
+			cond = cond || (prevchar > 57 && prevchar < 65);
+			cond = cond || (prevchar > 90 && prevchar < 97);
+			cond = cond || (prevchar > 122);
+			if (cond)
 			{
 				capnext = 1;
-			
 			}
 			else
 			{
@@ -45,5 +51,5 @@ char *cap_string(char *c)
 		count = count + 1;
 	}
 
-	return c;
+	return (c);
 }
