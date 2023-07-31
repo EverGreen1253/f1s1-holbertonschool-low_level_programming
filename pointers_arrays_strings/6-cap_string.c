@@ -27,29 +27,15 @@ char *cap_string(char *c)
 			cond = cond || (prevchar > 57 && prevchar < 65);
 			cond = cond || (prevchar > 90 && prevchar < 97);
 			cond = cond || (prevchar > 122);
-			if (cond)
-			{
-				capnext = 1;
-			}
-			else
-			{
-				capnext = 0;
-			}
+			capnext = cond ? 1 : 0;
 		}
-
 		letter = c[count];
-
-		if (letter >= 97 && letter <= 122)
+		if (capnext == 1 && letter >= 97 && letter <= 122)
 		{
-			if (capnext == 1)
-			{
-				c[count] = letter - 32;
-				capnext = 0;
-			}
+			c[count] = letter - 32;
+			capnext = 0;
 		}
-
 		count = count + 1;
 	}
-
 	return (c);
 }
