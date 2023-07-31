@@ -10,22 +10,28 @@
 int _strcmp(char *s1, char *s2)
 {
 	int count = 0;
-	int s1total = 0;
-	int s2total = 0;
+	int cmp;
 
 	while (s1[count] != '\0')
 	{
-		s1total = s1total + s1[count];
+		cmp = s1[count] - s2[count];
+		if (cmp != 0)
+		{
+			return cmp;
+		}
+
 		count = count + 1;
 	}
 
-	count = 0;
+	/*
+	 * at this point s1 should have ended
+	 * if the program hasn't ended and s2 is ongoing, then it wins.
+	 */
 
-	while (s2[count] != '\0')
+	if (s2[count] != '\0')
 	{
-		s2total = s2total + s2[count];
-		count = count + 1;
+		return(s2[count]);
 	}
 
-	return (s1total - s2total);
+	return (0);
 }
