@@ -18,9 +18,10 @@ char *_strchr(char *s, char c)
 		if (s[count] == c)
 		{
 			found = 1;
+			return (s + count);
 		}
 		count = count + 1;
 	}
 
-	return (s + (count - 1));
+	return (s + count);
 }
