@@ -23,5 +23,12 @@ char *_strchr(char *s, char c)
 		count = count + 1;
 	}
 
-	return (NULL);
+	if (c == '\0')
+	{
+		return (s + count);
+	}
+	else
+	{
+		return (NULL);
+	}
 }
