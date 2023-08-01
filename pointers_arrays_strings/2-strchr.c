@@ -12,7 +12,6 @@ char *_strchr(char *s, char c)
 {
 	int count = 0;
 	int found = 0;
-	char null = 0;
 
 	while ((s[count] != '\0') && (found == 0))
 	{
@@ -24,5 +23,5 @@ char *_strchr(char *s, char c)
 		count = count + 1;
 	}
 
-	return (&null);
+	return (NULL);
 }
