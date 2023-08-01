@@ -16,6 +16,11 @@ char *_strstr(char *haystack, char *needle)
 
 	while (haystack[i] != '\0')
 	{
+		if (*needle == '')
+		{
+			return haystack;
+		}
+
 		if (haystack[i] == needle[0])
 		{
 			match = 1;
