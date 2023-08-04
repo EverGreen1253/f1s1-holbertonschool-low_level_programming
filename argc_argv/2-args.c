@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
 		{
 			printf("%s\n", (argv[i]));
 
-			i = i + 1; 
+			i = i + 1;
 		}
 	}
 	return (0);
