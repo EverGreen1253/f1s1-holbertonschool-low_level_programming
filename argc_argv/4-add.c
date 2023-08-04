@@ -13,7 +13,6 @@ int main(int argc, char *argv[])
 {
 	int i = 0;
 	int sum = 0;
-	int check = 0;
 	int term = 0;
 	int digitsonly = 1;
 
