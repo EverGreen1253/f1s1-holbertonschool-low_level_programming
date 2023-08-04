@@ -10,10 +10,8 @@
  */
 int main(int argc, char *argv[])
 {
-	char *str1 = argv[1];
-	char *str2 = argv[2];
-	int num1 = 1;
-	int num2 = 1;
+	int num1 = *argv[1];
+	int num2 = *argv[2];
 
 	if (argc != 3)
 	{
@@ -22,25 +20,9 @@ int main(int argc, char *argv[])
 	}
 	else
 	{
-		num1 = *str1 - 48;
-		num2 = *str2 - 48;
-		str1 = str1 + 1;
-		str2 = str2 + 1;
+		printf("num1 - %d, num2 - %d\n", num1 - 48, num2 - 48);
 
-		/**
-		* printf("num1 - %d, num2 - %d\n", num1, num2);
-		*/
-
-		while (*str1 != '\0')
-		{
-			num1 = (num1 * 10) + (*str2 - 48);
-		}
-		while (*str2 != '\0')
-		{
-			num2 = (num2 * 10) + (*str2 - 48);
-		}
-
-		printf("%d\n", (num1 * num2));
+		printf("%d\n", ((num1 - 48) * (num2 - 48)));
 	}
 	return (0);
 }
