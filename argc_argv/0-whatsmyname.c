@@ -3,6 +3,8 @@
 
 /**
  * main - check the code
+ * @argc: no. of params
+ * @argv: array of params
  *
  * Return: Always 0.
  */
