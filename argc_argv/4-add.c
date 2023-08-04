@@ -33,7 +33,6 @@ int main(int argc, char *argv[])
 				printf("Error\n");
 				return (1);
 			}
-			
 			sum = sum + term;
 		}
 
@@ -41,7 +40,7 @@ int main(int argc, char *argv[])
 	}
 	printf("%d\n", sum);
 
-	return (0);
+	exit(EXIT_SUCCESS);
 }
 
 /**
