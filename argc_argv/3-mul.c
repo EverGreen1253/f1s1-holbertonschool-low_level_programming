@@ -20,7 +20,9 @@ int main(int argc, char *argv[])
 	}
 	else
 	{
-		printf("num1 - %d, num2 - %d\n", num1 - 48, num2 - 48);
+		/**
+		 * printf("num1 - %d, num2 - %d\n", num1 - 48, num2 - 48);
+		 */
 
 		printf("%d\n", ((num1 - 48) * (num2 - 48)));
 	}
