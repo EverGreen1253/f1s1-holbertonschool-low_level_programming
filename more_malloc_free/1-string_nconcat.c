@@ -51,7 +51,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 		while (j < n)
 		{
-			if (j < j_wo_eos)
+			if (j < (j_wo_eos - 1))
 			{
 				s[j + i] = s2[j];
 			}
@@ -63,5 +63,5 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		}
 	}
 	s[(i + n)] = '\0';
-	return (s);	
+	return (s);
 }
