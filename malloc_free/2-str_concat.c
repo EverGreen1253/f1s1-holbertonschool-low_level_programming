@@ -16,6 +16,10 @@ char *str_concat(char *s1, char *s2)
 	int size;
 	char *s;
 
+	if (s1 == NULL || s2 == NULL)
+	{
+		return (NULL);
+	}
 	while (s1[i] != '\0')
 	{
 		i = i + 1;
@@ -24,23 +28,9 @@ char *str_concat(char *s1, char *s2)
 	{
 		j = j + 1;
 	}
-
 	size = (i + 1) + (j + 1) - 1;
-
-	/**
-	 * printf("string 1 size - %d\n", i);
-	 * printf("string 2 size - %d\n", j);
-	 * printf("total size - %d\n", size);
-	 */
-
 	s = malloc(size);
-	if (s == NULL)
-	{
-		return NULL;
-	}
-
-	i = 0;
-	j = 0;
+	i = j = 0;
 	while (s1[i] != '\0')
 	{
 		s[i] = s1[i];
@@ -48,11 +38,9 @@ char *str_concat(char *s1, char *s2)
 	}
 	while (s2[j] != '\0')
 	{
-		s[j+i] = s2[j];
+		s[j + i] = s2[j];
 		j = j + 1;
 	}
-	s[j+i] = '\0';
-
+	s[j + i] = '\0';
 	return (s);
-
 }
