@@ -23,7 +23,13 @@ char *_strdup(char *str)
 		i = i + 1;
 	}
 
-	s = malloc(i);
+	/**
+	 * Don't forget to include the \0 end-of-string
+	 * Also, since we started from index 0, we need to +1
+	 * printf("To allocate - %d\n", i + 1);
+	 */
+
+	s = malloc(i + 1);
 
 	if (s == NULL)
 	{

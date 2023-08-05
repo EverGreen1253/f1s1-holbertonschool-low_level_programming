@@ -11,6 +11,8 @@ int main(void)
 {
 	char *s;
 
+	printf("Original string size - %lu\n", sizeof("Duplicated"));
+
 	s = _strdup("Duplicated");
 	if (s == NULL)
 	{
