@@ -32,27 +32,22 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	s = calloc(size, 1);
 	if (s == NULL)
-	{
 		return (NULL);
-	}
 
 	i = j = 0;
 	if (s1 != NULL)
-	{
 		while (s1[i] != '\0')
 		{
 			s[i] = s1[i];
 			i = i + 1;
 		}
-	}
 	if (s2 != NULL)
-	{
 		while (j < n)
 		{
 			s[j + i] = s2[j];
 			j = j + 1;
 		}
-	}
+
 	s[size - 1] = '\0';
 	return (s);
 }
