@@ -66,7 +66,7 @@ int get_size_of(char *str)
 		i = i + 1;
 	}
 
-	return (i);
+	return (i + 1);
 }
 
 /**
@@ -82,6 +82,7 @@ char *copy_string(char *str)
 	char *s;
 
 	size = get_size_of(str);
+
 	s = malloc(size);
 	if (s == NULL)
 	{
