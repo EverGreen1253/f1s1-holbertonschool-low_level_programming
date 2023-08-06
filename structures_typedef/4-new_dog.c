@@ -17,11 +17,26 @@ dog_t *new_dog(char *name, float age, char *owner)
 	char *o;
 
 	n = copy_string(name);
+	if (n == NULL)
+	{
+		free(n);
+		return (NULL);
+	}
+
 	o = copy_string(owner);
+	if (o == NULL)
+	{
+		free(o);
+		free(n);
+		return (NULL);
+	}
 
 	d = malloc(sizeof(dog_t));
 	if (d == NULL)
 	{
+		free(d);
+		free(o);
+		free(n);
 		return (NULL);
 	}
 
