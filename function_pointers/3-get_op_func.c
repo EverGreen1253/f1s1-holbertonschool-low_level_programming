@@ -24,19 +24,20 @@ int (*get_op_func(char *s))(int, int)
 
 	while (*ops[i].op != *s)
 	{
-		/**
-		 * printf("To compare - %s\n", ops[i].op);
-		 * printf("Math operator - %s\n", s);
-		 */
+		printf("To compare - %s\n", ops[i].op);
+		printf("Math operator - %s\n", s);
 
 		i = i + 1;
+
+		if ((i > 4) || (s[1] != '\0'))
+		{
+			printf("Error\n");
+			exit(99);
+		}
+
 	}
 
-	if (i > 5)
-	{
-		printf("Error");
-		exit(99);
-	}
+	printf("index I value - %d\n", i);
 
 	return (ops[i].f);
 }
