@@ -24,8 +24,10 @@ int (*get_op_func(char *s))(int, int)
 
 	while (*ops[i].op != *s)
 	{
-		printf("To compare - %s\n", ops[i].op);
-		printf("Math operator - %s\n", s);
+		/**
+		 * printf("To compare - %s\n", ops[i].op);
+		 * printf("Math operator - %s\n", s);
+		 */
 
 		i = i + 1;
 
@@ -36,8 +38,6 @@ int (*get_op_func(char *s))(int, int)
 		}
 
 	}
-
-	printf("index I value - %d\n", i);
 
 	return (ops[i].f);
 }
