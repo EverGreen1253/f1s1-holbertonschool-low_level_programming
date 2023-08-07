@@ -4,7 +4,9 @@
 
 /**
  * get_op_func - call the function performing the operation
- * @s: the operator passed in 
+ * @s: the operator passed in
+ *
+ * Return: pointer to function.
  */
 int (*get_op_func(char *s))(int, int)
 {
