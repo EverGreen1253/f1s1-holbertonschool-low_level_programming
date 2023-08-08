@@ -21,32 +21,29 @@ void print_all(const char * const format, ...)
 	int j = 0;
 	int printed_one = 0;
 
-	if (format != NULL)
-	{
-		va_start(list, format);
-			while (format[i] != '\0')
+	va_start(list, format);
+		while (format != NULL && format[i] != '\0')
+		{
+			while (j < 4)
 			{
-				while (j < 4)
+				if (*ops[j].t == format[i])
 				{
-					if (*ops[j].t == format[i])
-					{
-						/**
-						 * printf("match found - %c\n", format[i]);
-						 */
+					/**
+					 * printf("match found - %c\n", format[i]);
+					 */
 
-						if (printed_one == 1)
-							printf(", ");
+					if (printed_one == 1)
+						printf(", ");
 
-						ops[j].f(&list);
-						printed_one = 1;
-					}
-					j = j + 1;
+					ops[j].f(&list);
+					printed_one = 1;
 				}
-				j = 0;
-				i = i + 1;
+				j = j + 1;
 			}
-		va_end(list);
-	}
+			j = 0;
+			i = i + 1;
+		}
+	va_end(list);
 	printf("\n");
 }
 
@@ -107,10 +104,5 @@ void print_string(va_list *list)
 
 	s = va_arg(*list, char *);
 
-	if (s == NULL)
-	{
-		s = "(nil)";
-	}
-
-	printf("%s", s);
+	printf("%s", (s == NULL) ? "(nil)" : s);
 }
