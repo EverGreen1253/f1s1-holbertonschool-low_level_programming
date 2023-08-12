@@ -13,19 +13,17 @@ void free_list(list_t *head)
 {
 	list_t *node;
 
-	if (head == NULL)
+	if (head != NULL)
 	{
-		exit(98);
+		node = head;
+		if (node != NULL && node->next != NULL)
+		{
+			free_node(node->next);
+		}
+		head->next = NULL;
+		free(head->str);
+		free(head);
 	}
-
-	node = head;
-	if (node != NULL && node->next != NULL)
-	{
-		free_node(node->next);
-	}
-	head->next = NULL;
-	free(head->str);
-	free(head);
 }
 
 /**
