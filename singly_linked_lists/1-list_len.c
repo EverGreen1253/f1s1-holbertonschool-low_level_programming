@@ -4,7 +4,7 @@
 #include "lists.h"
 
 /**
- * print_list - check the code
+ * list_len - check the code
  * @h: head of the list
  *
  * Return: number of elements.
