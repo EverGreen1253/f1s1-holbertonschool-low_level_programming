@@ -13,6 +13,11 @@ void free_list(list_t *head)
 {
 	list_t *node;
 
+	if (head == NULL)
+	{
+		exit(98);
+	}
+
 	node = head;
 	if (node != NULL && node->next != NULL)
 	{
@@ -23,6 +28,12 @@ void free_list(list_t *head)
 	free(head);
 }
 
+/**
+ * free_node - frees the mem usage by a linked list node
+ * @node: the node to be freed up
+ *
+ * Return: nothing
+ */
 void free_node(list_t *node)
 {
 	if (node->next != NULL)
