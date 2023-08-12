@@ -5,6 +5,8 @@
 
 /**
  * add_node - check the code
+ * @head: pointer to the address of the head of the list
+ * @str, the string to add to the new node
  *
  * Return: pointer to list item.
  */
@@ -17,7 +19,7 @@ list_t *add_node(list_t **head, const char *str)
 	if (new == NULL)
 	{
 		printf("Error\n");
-		return NULL;
+		return (NULL);
 	}
 
 	while (str[i] != '\0')
