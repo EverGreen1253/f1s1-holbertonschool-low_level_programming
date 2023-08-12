@@ -13,7 +13,6 @@ size_t print_list(const list_t *h)
 {
 	const list_t *curr = h;
 	size_t len = 0;
-	char *s;
 
 	if (h != NULL)
 	{
