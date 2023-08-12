@@ -18,6 +18,8 @@ void free_list(list_t *head)
 	{
 		free_node(node->next);
 	}
+	head->next = NULL;
+	free(head->str);
 	free(head);
 }
 
@@ -27,5 +29,7 @@ void free_node(list_t *node)
 	{
 		free_node(node->next);
 	}
+	node->next = NULL;
+	free(node->str);
 	free(node);
 }
