@@ -1,0 +1,31 @@
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+#include "lists.h"
+
+/**
+ * free_list - check the code
+ * @head: head of the list
+ *
+ * Return: nothing.
+ */
+void free_list(list_t *head)
+{
+	list_t *node;
+
+	node = head;
+	if (node != NULL && node->next != NULL)
+	{
+		free_node(node->next);
+	}
+	free(head);
+}
+
+void free_node(list_t *node)
+{
+	if (node->next != NULL)
+	{
+		free_node(node->next);
+	}
+	free(node);
+}
