@@ -6,7 +6,7 @@
 /**
  * add_node - check the code
  * @head: pointer to the address of the head of the list
- * @str, the string to add to the new node
+ * @str: the string to add to the new node
  *
  * Return: pointer to list item.
  */
