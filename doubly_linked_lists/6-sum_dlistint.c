@@ -4,7 +4,7 @@
 #include "lists.h"
 
 /**
- * int sum_dlistint - check the code
+ * sum_dlistint - check the code
  * @head: head of the list
  *
  * Return: sum of num in all nodes.
