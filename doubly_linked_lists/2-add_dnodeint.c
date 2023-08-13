@@ -18,7 +18,7 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 	if (node == NULL)
 	{
 		free(node);
-		free_node(*head);
+		free_list(*head);
 		exit(98);
 	}
 
@@ -40,11 +40,38 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 	return (node);
 }
 
+/**
+ * free_list - check the code
+ * @head: head of the list
+ *
+ * Return: nothing.
+ */
+void free_list(dlistint_t *head)
+{
+	dlistint_t *node;
+
+	if (head != NULL)
+	{
+		node = head;
+		if (node != NULL && node->next != NULL)
+		{
+			free_node(node->next);
+		}
+		free(head);
+	}
+}
+
+/**
+ * free_node - frees mem usage by the node
+ * @node: node to free up
+ *
+ * Return: nothing.
+ */
 void free_node(dlistint_t *node)
 {
 	if (node->next != NULL)
 	{
 		free_node(node->next);
-		free(node);
 	}
+	free(node);
 }
