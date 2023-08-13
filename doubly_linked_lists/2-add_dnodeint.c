@@ -18,7 +18,6 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 	if (node == NULL)
 	{
 		free_node(node);
-		free(node);
 		exit(98);
 	}
 
