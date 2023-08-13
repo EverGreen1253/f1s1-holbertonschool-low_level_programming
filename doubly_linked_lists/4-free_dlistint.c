@@ -23,3 +23,18 @@ void free_dlistint(dlistint_t *head)
 		free(head);
 	}
 }
+
+/**
+ * free_node - frees mem usage by the node
+ * @node: node to free up
+ *
+ * Return: nothing.
+ */
+void free_node(dlistint_t *node)
+{
+	if (node->next != NULL)
+	{
+		free_node(node->next);
+	}
+	free(node);
+}
