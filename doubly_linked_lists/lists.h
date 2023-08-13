@@ -22,5 +22,6 @@ size_t dlistint_len(const dlistint_t *h);
 dlistint_t *add_dnodeint(dlistint_t **head, const int n);
 void free_list(dlistint_t *head);
 void free_node(dlistint_t *node);
+dlistint_t *add_dnodeint_end(dlistint_t **head, const int n);
 
 #endif
