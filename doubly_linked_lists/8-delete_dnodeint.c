@@ -41,9 +41,15 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 		free(spot);
 	}
 	else
-	{
-		spot->prev->next = spot->next;
-		spot->next->prev = spot->prev;
+	{	if (spot->next != NULL)
+		{
+			spot->prev->next = spot->next;
+			spot->next->prev = spot->prev;
+		}
+		else
+		{
+			spot->prev->next = NULL;
+		}
 		free(spot);
 	}
 
