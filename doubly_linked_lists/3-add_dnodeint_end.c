@@ -19,7 +19,7 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 	if (node == NULL)
 	{
 		free(node);
-		free_list(*head);
+		free_list_3(*head);
 		exit(98);
 	}
 
@@ -48,12 +48,12 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 }
 
 /**
- * free_list - check the code
+ * free_list_3 - check the code
  * @head: head of the list
  *
  * Return: nothing.
  */
-void free_list(dlistint_t *head)
+void free_list_3(dlistint_t *head)
 {
 	dlistint_t *node;
 
@@ -62,23 +62,23 @@ void free_list(dlistint_t *head)
 		node = head;
 		if (node != NULL && node->next != NULL)
 		{
-			free_node(node->next);
+			free_node_3(node->next);
 		}
 		free(head);
 	}
 }
 
 /**
- * free_node - frees mem usage by the node
+ * free_node_3 - frees mem usage by the node
  * @node: node to free up
  *
  * Return: nothing.
  */
-void free_node(dlistint_t *node)
+void free_node_3(dlistint_t *node)
 {
 	if (node->next != NULL)
 	{
-		free_node(node->next);
+		free_node_3(node->next);
 	}
 	free(node);
 }
