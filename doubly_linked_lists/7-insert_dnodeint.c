@@ -42,8 +42,6 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		return (NULL);
 	}
 
-	printf("index is %u\n", idx);
-
 	if (spot == NULL)
 	{
 		if (i == 0)
