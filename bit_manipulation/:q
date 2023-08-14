@@ -51,16 +51,16 @@ int _pow(int base, int power)
 	{
 		result = 1;
 
-		while (i < power)
+		while(i < power)
 		{
 			result = result * 2;
 			i = i + 1;
 		}
 	}
 
-	/**
-	 * printf("base - %d, power - %d, result - %d\n", base, power, result);
-	 */
+	/*
+	printf("base - %d, power - %d, result - %d\n", base, power, result);
+	*/
 
 	return (result);
 }
