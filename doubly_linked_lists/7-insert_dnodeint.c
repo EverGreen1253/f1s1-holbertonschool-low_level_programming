@@ -42,14 +42,12 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 
 	if (spot == NULL)
 	{
-		printf("01\n");
 		*h = node;
 		node->prev = NULL;
 		node->next = NULL;
 	}
 	else
 	{
-		printf("02\n");
 		spot->prev->next = node;
 		node->prev = spot->prev;
 		spot->prev = node;
