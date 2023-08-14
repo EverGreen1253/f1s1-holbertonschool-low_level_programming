@@ -42,6 +42,13 @@ unsigned int binary_to_uint(const char *b)
 	return (result);
 }
 
+/**
+ * _pow - my own implementation of the pow function
+ * @base: base
+ * @power: power
+ *
+ * Return: int result.
+ */
 int _pow(int base, int power)
 {
 	int result = 0;
