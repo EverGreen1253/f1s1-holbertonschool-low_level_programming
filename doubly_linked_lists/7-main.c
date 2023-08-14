@@ -22,7 +22,5 @@ int main(void)
 		printf("(nil)\n");
 	n = print_dlistint(head);
 	printf("-> %lu elements\n", n);
-	n = _print_dlistint_backward(head);
-	printf("-> %lu elements\n", n);
 	return (0);
 }
