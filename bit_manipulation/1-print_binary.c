@@ -14,17 +14,6 @@ void print_binary(unsigned long int n)
 	unsigned long int value = n;
 	unsigned long int p;
 
-	if (n == ULONG_MAX)
-	{
-		while (i < 64)
-		{
-			_putchar('1');
-			i = i + 1;
-		}
-		_putchar('1');
-		i = 0;
-	}
-
 	if (n != 0)
 	{
 		if (n == ULONG_MAX)
