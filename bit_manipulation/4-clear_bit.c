@@ -40,6 +40,13 @@ int clear_bit(unsigned long int *n, unsigned int index)
 		value = value / 2;
 	}
 
+	/* the bit to set is faaaaaaar ahead or value is 0 */
+	if ((index > (i - 1)) || (value == 0))
+	{
+		/* no change */
+		return (1);
+	}
+
 	return (result);
 }
 
