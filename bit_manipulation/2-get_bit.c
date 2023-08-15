@@ -16,7 +16,7 @@ int get_bit(unsigned long int n, unsigned int index)
 	int r;
 	unsigned int i = 0;
 
-	while (value != 0)
+	while (value > 0)
 	{
 		r = (value % 2);
 		if (r == 1)
