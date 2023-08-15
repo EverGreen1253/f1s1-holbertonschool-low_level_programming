@@ -29,7 +29,7 @@ int get_bit(unsigned long int n, unsigned int index)
 			/* printf("i - %d, bit - 0\n", i); */
 		}
 
-		if (i == index || value == 0)
+		if (i == index)
 		{
 			return (r);
 		}
