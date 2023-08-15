@@ -9,26 +9,26 @@
  */
 void print_binary(unsigned long int n)
 {
-	int i = 0;
-	int value = n;
-	int p;
+	signed long int i = 0;
+	unsigned long int value = n;
+	unsigned long int p;
 
 	if (n != 0)
 	{
-		while((value - (1 << i)) >= 0)
+		while (value >= twopower(i))
 		{
 			i = i + 1;
 		}
 		i = i - 1;
 
-		/* printf("For %lu, the largest binary digit at pos %d\n", n, i); */
+		/* printf("For %lu, the largest binary digit at pos %lu\n", n, i); */
 	}
 
 	while (i >= 0)
 	{
 		p = twopower(i);
 
-		if ((value - p) >= 0)
+		if (value >= p)
 		{
 			_putchar('1');
 			value = value - p;
@@ -44,15 +44,14 @@ void print_binary(unsigned long int n)
 
 /**
  * twopower - my own implementation of the pow function
- * @base: base
  * @power: power
  *
  * Return: int result.
  */
-int twopower(int power)
+unsigned long int twopower(unsigned long int power)
 {
-	int result = 1;
-	int i = 0;
+	unsigned long int result = 1;
+	unsigned long int i = 0;
 
 	while (i < power)
 	{
