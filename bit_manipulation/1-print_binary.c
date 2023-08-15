@@ -23,7 +23,6 @@ void print_binary(unsigned long int n)
 				_putchar('1');
 				i = i + 1;
 			}
-			_putchar('1');
 			i = -1;
 		}
 		else
