@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "main.h"
+#include <limits.h>
 
 /**
  * print_binary - check the code
@@ -13,13 +14,38 @@ void print_binary(unsigned long int n)
 	unsigned long int value = n;
 	unsigned long int p;
 
-	if (n != 0)
+	if (n == ULONG_MAX)
 	{
-		while (value >= twopower(i))
+		while (i < 64)
 		{
+			_putchar('1');
 			i = i + 1;
 		}
-		i = i - 1;
+		_putchar('1');
+		i = 0;
+	}
+
+	if (n != 0)
+	{
+		if (n == ULONG_MAX)
+		{
+			while (i < 64)
+			{
+				_putchar('1');
+				i = i + 1;
+			}
+			_putchar('1');
+			i = -1;
+		}
+		else
+		{
+			while (value >= twopower(i))
+			{
+				/* printf("i - %ld, n - %lu, twopower - %lu\n", i, n, twopower(i)); */
+				i = i + 1;
+			}
+			i = i - 1;
+		}
 
 		/* printf("For %lu, the largest binary digit at pos %lu\n", n, i); */
 	}
@@ -48,10 +74,10 @@ void print_binary(unsigned long int n)
  *
  * Return: int result.
  */
-unsigned long int twopower(unsigned long int power)
+unsigned long int twopower(signed long int power)
 {
 	unsigned long int result = 1;
-	unsigned long int i = 0;
+	signed long int i = 0;
 
 	while (i < power)
 	{
@@ -59,7 +85,7 @@ unsigned long int twopower(unsigned long int power)
 		i = i + 1;
 	}
 
-	/* printf("base - %d, power - %d, result - %d\n", base, power, result); */
+	/* printf("base - 2, power - %ld, result - %lu\n", power, result); */
 
 	return (result);
 }

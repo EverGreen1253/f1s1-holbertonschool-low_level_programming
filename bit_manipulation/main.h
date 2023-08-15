@@ -5,6 +5,6 @@ int _putchar(char c);
 unsigned int binary_to_uint(const char *b);
 int _pow(int base, int power);
 void print_binary(unsigned long int n);
-unsigned long int twopower(unsigned long int power);
+unsigned long int twopower(signed long int power);
 
 #endif
