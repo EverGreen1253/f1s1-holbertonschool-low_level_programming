@@ -38,5 +38,11 @@ int get_bit(unsigned long int n, unsigned int index)
 		value = value / 2;
 	}
 
+	/* pad the number with extra zeroes in front */
+	if (index > (i - 1))
+	{
+		return (0);
+	}
+
 	return (result);
 }
