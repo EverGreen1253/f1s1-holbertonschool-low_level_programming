@@ -25,12 +25,14 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	sz = read(fd, c, letters);
 	c[sz] = '\0';
 
-	while (c[i] != '\0')
+	write(fd, c, sz);
+
+	while (i < sz)
 	{
 		_putchar(c[i]);
 		i = i + 1;
 	}
-	result = i;
+	result = sz;
 
 	if (close(fd) < 0)
 	{
