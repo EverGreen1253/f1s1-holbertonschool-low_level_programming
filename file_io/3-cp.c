@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
 		/* printf("command - %s, file one - %s, file two - %s\n", argv[0], fone, ftwo); */
 
 		fdone = open(fone, O_RDONLY);
-		fdtwo = open(ftwo, O_RDWR | O_CREAT | O_TRUNC, 0664);
+		fdtwo = open(ftwo, O_WRONLY | O_CREAT | O_TRUNC, 0664);
 
 		if (fdone < 0)
 		{
