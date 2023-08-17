@@ -32,12 +32,12 @@ int main(int argc, char *argv[])
 
 		if (fdone < 0)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't read from file %s", fone);
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", fone);
 			exit(98);
 		}
 		if (fdtwo < 0)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't write to %s", ftwo);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", ftwo);
 			exit(99);
 		}
 
@@ -49,13 +49,13 @@ int main(int argc, char *argv[])
 
 		if (close(fdone) < 0)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't close fd %d", fdone);
+			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fdone);
 			exit(100);
 		}
 
 		if (close(fdtwo) < 0)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't close fd %d", fdtwo);
+			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fdtwo);
 			exit(100);
 		}
 
