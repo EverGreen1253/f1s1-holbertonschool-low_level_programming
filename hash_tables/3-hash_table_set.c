@@ -42,6 +42,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		/* overwrite value for same key */
 		if (*temp->key == *key)
 		{
+			free(ht->array[index]->value);
 			ht->array[index]->value = malloc(strlen(value) + 1);
 			strcpy(ht->array[index]->value, value);
 		}

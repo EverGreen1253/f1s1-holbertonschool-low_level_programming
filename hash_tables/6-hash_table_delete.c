@@ -39,6 +39,12 @@ void hash_table_delete(hash_table_t *ht)
 	free(ht);
 }
 
+/**
+ * del_list - recursive func to delete a linked list
+ * @node: the head of the list
+ *
+ * Return: nothing
+ */
 void del_list(hash_node_t *node)
 {
 	if (node->next != NULL)
