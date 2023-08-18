@@ -23,16 +23,17 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 
 	index = hash_djb2((unsigned char *)key) % (ht->size);
-	slot = malloc(sizeof(hash_node_t));
-	slot->key = malloc(strlen(key) + 1);
-	slot->value = malloc(strlen(value) + 1);
-	slot->next = NULL;
-
-	strcpy(slot->key, key);
-	strcpy(slot->value, value);
 
 	if (ht->array[index] == NULL)
 	{
+		slot = malloc(sizeof(hash_node_t));
+		slot->key = malloc(strlen(key) + 1);
+		slot->value = malloc(strlen(value) + 1);
+		slot->next = NULL;
+
+		strcpy(slot->key, key);
+		strcpy(slot->value, value);
+
 		ht->array[index] = slot;
 	}
 	else
@@ -48,6 +49,14 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		}
 		else
 		{
+			slot = malloc(sizeof(hash_node_t));
+			slot->key = malloc(strlen(key) + 1);
+			slot->value = malloc(strlen(value) + 1);
+			slot->next = NULL;
+
+			strcpy(slot->key, key);
+			strcpy(slot->value, value);
+
 			slot->next = temp;
 			ht->array[index] = slot;
 		}
