@@ -14,7 +14,12 @@
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int index = hash_djb2((unsigned char *)key) % (ht->size);
-	hash_node_t *slot;
+	hash_node_t *slot, *temp;
+
+	if (ht == NULL)
+	{
+		return (0);
+	}
 
 	slot = malloc(sizeof(hash_node_t));
 	slot->key = malloc(strlen(key) + 1);
@@ -24,7 +29,19 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	strcpy(slot->key, key);
 	strcpy(slot->value, value);
 
-	ht->array[index] = slot;
+	if (ht->array[index] == NULL)
+	{
+		ht->array[index] = slot;
+	}
+	else
+	{
+		temp = ht->array[index];
+		while (temp->next != NULL)
+		{
+			temp = temp->next;
+		}
+		temp->next = slot;
+	}
 
 	return (1);
 }
