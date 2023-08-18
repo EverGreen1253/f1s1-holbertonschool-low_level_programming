@@ -11,14 +11,14 @@
  */
 hash_table_t *hash_table_create(unsigned long int size)
 {
-	hash_node_t *node_array;
+	hash_node_t **node_array;
 	hash_table_t *table;
 
 	/* printf("sizeof hash_table_t - %lu\n", sizeof(hash_table_t)); */
 	/* printf("sizeof hash_node_t - %lu\n", sizeof(hash_node_t *)); */
 
-	table = malloc(sizeof(hash_table_t) * 1);
-	node_array = malloc(sizeof(hash_node_t *) * size);
+	table = malloc(sizeof(hash_table_t));
+	node_array = calloc(size, sizeof(hash_node_t *));
 
 	if (table == NULL || node_array == NULL)
 	{
@@ -28,7 +28,7 @@ hash_table_t *hash_table_create(unsigned long int size)
 	}
 
 	table->size = size;
-	table->array = &node_array;
+	table->array = node_array;
 
 	return (table);
 }

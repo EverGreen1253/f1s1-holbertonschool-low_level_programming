@@ -17,10 +17,14 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *slot;
 
 	slot = malloc(sizeof(hash_node_t));
-	slot->key = strdup(key);
-	slot->value = strdup(value);
+	slot->key = malloc(strlen(key) + 1);
+	slot->value = malloc(strlen(value) + 1);
+	slot->next = NULL;
 
-	(ht->array)[index] = slot;
+	strcpy(slot->key, key);
+	strcpy(slot->value, value);
+
+	ht->array[index] = slot;
 
 	return (1);
 }
