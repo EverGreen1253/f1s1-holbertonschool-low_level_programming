@@ -40,9 +40,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		temp = ht->array[index];
 
 		/* overwrite value for same key */
-		if (*temp->key == *slot->key)
+		if (*temp->key == *key)
 		{
-			ht->array[index] = slot;
+			ht->array[index]->value = malloc(strlen(value) + 1);
+			strcpy(ht->array[index]->value, value);
 		}
 		else
 		{

@@ -7,13 +7,13 @@
  * hash_table_get - check the code
  * @ht: hash table
  * @key: key to look for
- * 
+ *
  * Return: Value of Key or NULL.
  */
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
 	unsigned long int index;
-	hash_node_t *slot;
+	hash_node_t *slot, *temp;
 
 	if (ht == NULL)
 	{
@@ -29,5 +29,18 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 		return (NULL);
 	}
 
-	return (slot->value);
+	temp = slot;
+	while (temp != NULL)
+	{
+		if (*temp->key == *key)
+		{
+			return (temp->value);
+		}
+		else
+		{
+			temp = temp->next;
+		}
+	}
+
+	return (NULL);
 }
