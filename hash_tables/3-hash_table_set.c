@@ -36,8 +36,17 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	else
 	{
 		temp = ht->array[index];
-		slot->next = temp;
-		ht->array[index] = slot;
+
+		/* overwrite value for same key */
+		if (*temp->key == *slot->key)
+		{
+			ht->array[index] = slot;
+		}
+		else
+		{
+			slot->next = temp;
+			ht->array[index] = slot;
+		}
 	}
 
 	return (1);
