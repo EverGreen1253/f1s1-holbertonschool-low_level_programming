@@ -14,16 +14,21 @@ int main(void) {
 	char *pathvar, *token;
 	pathvar = getenv("PATH");
 	int i = 0;
+	char *cmd = "/ls", *final = "";
 
 	argv = malloc(sizeof(char *) * 9999);
 
 	token = strtok(pathvar, ":");
 	while (token != NULL)
 	{
-		printf(" - %s\n", token);
+		// need to allocate memory for final
 
-		argv[i] = malloc(strlen(token) + 1);
-		strcpy(argv[i], token);
+		final = malloc(strlen(token) + strlen(cmd) + 1);
+		strcpy(final, token);
+		strcat(final, cmd);
+		argv[i] = final;
+
+		printf("%s\n", argv[i]);
 
 		i = i + 1;
 		token = strtok(NULL, ":");
