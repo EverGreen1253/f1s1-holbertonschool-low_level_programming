@@ -9,11 +9,10 @@
  */
 int main(int ac, char **av, char **env)
 {
-	unsigned int i;
-	int j = -1;
+	int i, j = -1, k;
 	extern char** environ;
 	char **argv;
-	char *myvar = "MY_VAR", *myvalue = "MYVALUE", *token, *temp, *final = "";
+	char *myvar = "My_VAR", *token, *temp;
 
 	i = 0;
 	while (env[i] != NULL)
@@ -26,46 +25,38 @@ int main(int ac, char **av, char **env)
 		token = strtok(temp, "=");
 		if (strcmp(token, myvar) == 0)
 		{
-			final = malloc(strlen(token) + strlen("=") +  strlen(myvalue) + 1);
-
-			strcpy(final, token);
-			strcat(final, "=");
-			strcat(final, myvalue);
-			env[i] = malloc(strlen(final) + 1);
-
-			env[i] =  final;
-
+			// wanted var exists! Take note of its index.
 			j = i;
 		}
 		i++;
 		free(temp);
 	}
 
+	printf("\n\nJ value is: %d\n\n", j);
+
 
 	// Oh no... we have to re-create the array.
-	if (j == -1)
+	if (j != -1)
 	{
 		printf("\n\nnew array\n\n");
 
-		argv = malloc(sizeof(char *) * i + 1);
+		// we're reducing the size of the env
+		argv = malloc(sizeof(char *) * i);
 
 		i = 0;
+		k = 0;
 		while (environ[i] != NULL)
 		{
-			argv[i] = malloc(strlen(environ[i]) + 1);
-			strcpy(argv[i], environ[i]);
-
+			if (i != j)
+			{
+				argv[k] = malloc(strlen(environ[i]) + 1);
+				strcpy(argv[k], environ[i]);
+				k++;
+			}
 			i++;
 		}
 
-		argv[i] = malloc(strlen(myvar) + strlen("=") + strlen(myvalue) + 1);
-
-		strcpy(argv[i], myvar);
-		strcat(argv[i], "=");
-		strcat(argv[i], myvalue);
-		
 		environ = argv;
-		j = i;
 	}
 
 	printf("Printing Environ\n\n");
