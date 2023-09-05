@@ -13,6 +13,7 @@
 int binary_search(int *array, size_t size, int value)
 {
 	int start, stop, pivot;
+
 	start = 0;
 	stop = (int)size - 1;
 
@@ -33,7 +34,7 @@ int binary_search(int *array, size_t size, int value)
 		pivot = start + (stop - start) / 2;
 
 		if (array[pivot] == value)
-			return pivot;
+			return (pivot);
 
 		if (array[pivot] < value)
 			start = pivot + 1;
@@ -41,11 +42,12 @@ int binary_search(int *array, size_t size, int value)
 			stop = pivot - 1;
 	}
 
-	return -1;
+	return (-1);
 }
 
 /**
  * print_array - the array
+ * @array: the array
  * @start: index to start from
  * @stop: index to stop at
  *
