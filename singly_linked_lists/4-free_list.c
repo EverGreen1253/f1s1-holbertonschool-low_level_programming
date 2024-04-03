@@ -11,14 +11,11 @@
  */
 void free_list(list_t *head)
 {
-	list_t *node;
-
 	if (head != NULL)
 	{
-		node = head;
-		if (node != NULL && node->next != NULL)
+		if (head != NULL && head->next != NULL)
 		{
-			free_node(node->next);
+			free_node(head->next);
 		}
 		head->next = NULL;
 		free(head->str);
